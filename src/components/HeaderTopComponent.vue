@@ -2,6 +2,7 @@
 export default {
     data() {
         return {
+            currentActivePage: 0,
             topData: {
                 logoName: 'Everlead',
                 logo: 'logo-img-01.png',
@@ -33,7 +34,7 @@ export default {
 
             <div class="nav-bar">
                 <ul>
-                    <li v-for="(singleLink, i) in topData.nav" :key="i">
+                    <li v-for="(singleLink, i) in topData.nav" :key="i" :class="i == currentActivePage ? 'active-link' : ''">
                         {{ singleLink }}
                     </li>
                 </ul>
@@ -46,6 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/scss/partials/layout.scss";
+@use "../assets/scss/partials/variables.scss" as *;
 .logo {
     width: 10%;
 
@@ -60,6 +62,15 @@ export default {
     display: flex;
     align-items: center;
 
+    .active-link {
+        color: $fill-color-one;
+    }
+
+    .active-link::before {
+            content: "\2192";
+            margin-right: 5px;
+            font-size: 22px;
+        }
     .fa-magnifying-glass {
         margin-right: 30px;
     }

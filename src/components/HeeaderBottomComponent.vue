@@ -52,7 +52,7 @@ export default {
 
     .arrow-slide:nth-of-type(2) {
         right: 0;
-        transform: translate(-50%);
+        transform: translate(-100%);
     }
     .slide {
         width: 45%;

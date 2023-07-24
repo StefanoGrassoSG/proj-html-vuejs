@@ -45,42 +45,39 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-    .container {
-        max-width: 100%;
-        padding: 20px 100px;
-        height: 100px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+@use "../assets/scss/partials/layout.scss";
+.logo {
+    width: 10%;
 
-            .logo {
-                width: 10%;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                    }
-            }
-
-            .nav-bar {
-                display: flex;
-                align-items: center;
-
-                 .fa-magnifying-glass {
-                    margin-right: 30px;
-                 }
-            }
-            .nav-bar > ul {
-                list-style: none;
-                display: inline-block;
-
-                li {
-                    display: inline-block;
-                    margin-right: 30px;
-                    font-weight: bold;
-                }
-            }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+
+    .fa-magnifying-glass {
+        margin-right: 30px;
+    }
+
+    .fa-magnifying-glass,
+    .fa-list {
+        cursor: pointer;
+    }
+}
+.nav-bar > ul {
+    list-style: none;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        margin-right: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
 </style>

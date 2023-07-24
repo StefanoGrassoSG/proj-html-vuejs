@@ -1,9 +1,11 @@
 <script >
 import HeaderTopComponent from './HeaderTopComponent.vue';
+import HeeaderBottomComponent from './HeeaderBottomComponent.vue';
 
 export default {
     components: {
-        HeaderTopComponent
+        HeaderTopComponent,
+        HeeaderBottomComponent
     },
     data() {
         return {
@@ -16,6 +18,8 @@ export default {
 <template>
     <header>
         <HeaderTopComponent />
+
+        <HeeaderBottomComponent />
     </header>
 </template>
 
@@ -23,7 +27,7 @@ export default {
     header {
         background-image: url('../assets/img/rev-slider-main-home-img-03.jpg');
         background-size: cover;
+        background-position: 0% 35%;
         background-repeat: no-repeat;
-        height: 600px;
     }
 </style>

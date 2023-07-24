@@ -1,9 +1,11 @@
 <script >
 import HeaderComponent from './components/HeaderComponent.vue';
+import MainComponent from './components/MainComponent.vue';
 
 export default {
   components: {
-    HeaderComponent
+    HeaderComponent,
+    MainComponent
   },
   data() {
     return {
@@ -17,9 +19,7 @@ export default {
 
   <HeaderComponent />
 
-  <main>
-    MAIN
-  </main>
+  <MainComponent />
 
   <footer>
     FOOTER

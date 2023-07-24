@@ -27,7 +27,7 @@ export default {
     header {
         background-image: url('../assets/img/rev-slider-main-home-img-03.jpg');
         background-size: cover;
-        background-position: 0% 35%;
+        background-position: 0% 40%;
         background-repeat: no-repeat;
     }
 </style>

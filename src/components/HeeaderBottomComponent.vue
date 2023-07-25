@@ -38,28 +38,34 @@ export default {
 @use "../assets/scss/partials/layout.scss";
 @use "../assets/scss/partials/variables.scss" as *;
 
-
-.container {
-    margin-top: 220px;
-    padding-bottom: 200px;
+.header-bottom {
     position: relative;
+}
+.container {
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 220px;
+    padding: 0;
+    padding-bottom: 200px;
+
 
     .arrow-slide {
         position: absolute;
         font-size: 50px;
         cursor: pointer;
+        top: 15%;
     }
 
+    .arrow-slide:nth-of-type(1) {
+        left: 60px;
+    }
     .arrow-slide:nth-of-type(2) {
-        right: 0;
-        transform: translate(-100%);
+        right: 60px;
     }
     .slide {
-        width: 45%;
+        width: 60%;
         text-align: left;
-        padding: 0 70px;
-        position: relative;
-        left: 200px;
+        padding: 0 40px 0 15px;
 
         h1 {
             font-size: 100px;

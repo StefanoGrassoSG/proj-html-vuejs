@@ -76,8 +76,6 @@ export default {
 @use "../assets/scss/partials/layout.scss";
 
 section {
-    background-color: $third-bg;
-
     .container {
         width: 95%;
         display: block;

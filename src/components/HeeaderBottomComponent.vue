@@ -51,7 +51,7 @@ export default {
 
     .arrow-slide {
         position: absolute;
-        font-size: 50px;
+        font-size: 40px;
         cursor: pointer;
         top: 15%;
     }

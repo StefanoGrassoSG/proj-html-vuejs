@@ -112,6 +112,7 @@ section {
 
                     h5 {
                         font-size: 25px;
+                        line-height: 20px;
                     }
 
                     .more {

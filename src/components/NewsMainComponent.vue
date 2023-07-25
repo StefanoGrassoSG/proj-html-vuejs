@@ -44,6 +44,9 @@ export default {
 
 <template>
     <section>
+        <a href="#" class="up">
+            &#129057;
+        </a>
         <div class="arrow-slide">
             &#8592;
         </div>
@@ -90,10 +93,17 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/scss/partials/variables.scss" as *;
+@use "../assets/scss/partials/layout.scss";
 
 section {
     position: relative;
 
+    a {
+        position: absolute;
+        top: 40%;
+        right: 30px;
+        transform: translate(-0%, -50%);
+    }
     .arrow-slide {
         font-size: 40px;
         position: absolute;

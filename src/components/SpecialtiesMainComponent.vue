@@ -35,13 +35,19 @@ export default {
   methods: {
     getImagePath: function(imgpath) {
             return new URL(imgpath, import.meta.url).href;
-        }
+        },
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }    
   }
 }
 </script>
 
 <template>
     <section>
+        <a href="#" class="up" @click.prevent="scrollToTop">
+            &#129057;
+        </a>
         <div class="container">
             <div class="title">
                 <h2>
@@ -76,8 +82,15 @@ export default {
 @use "../assets/scss/partials/layout.scss";
 
 section {
+    position: relative;
+
+    a {
+        position: absolute;
+        right: 30px;
+        bottom: 20px;
+    }
     .container {
-        width: 95%;
+        width: 90%;
         display: block;
         margin: auto;
         background-color: white;

@@ -48,6 +48,13 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/scss/partials/layout.scss";
 @use "../assets/scss/partials/variables.scss" as *;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 60px;
+    align-items: center;
+}
 .logo {
     width: 10%;
 

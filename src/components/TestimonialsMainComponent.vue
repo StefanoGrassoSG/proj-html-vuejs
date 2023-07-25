@@ -44,6 +44,9 @@ export default {
         else {
             this.currentTestimonials--
         }
+    },
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   },
   computed: {
@@ -61,6 +64,9 @@ export default {
 
 <template>
     <section>
+        <a href="#" class="up" @click.prevent="scrollToTop">
+            &#129057;
+        </a>
         <h2>
             {{ testimonials.title }}
         </h2>
@@ -103,12 +109,21 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/scss/partials/variables.scss" as *;
+@use "../assets/scss/partials/layout.scss";
 
 section {
     background-color: $lightBlack-bg;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 120px;
+    position: relative;
+
+    a {
+        position: absolute;
+        top: 20%;
+        right: 30px;
+        transform: translate(-0%, -50%);
+    }
 
     .container {
         position: relative;

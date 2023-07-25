@@ -1,19 +1,21 @@
 <script >
-import SectionOneMain from './SectionOneMain.vue';
-import SectionTwoMain from './SectionTwoMain.vue';
+import specialtiesMainComponent from './specialtiesMainComponent.vue';
+import BossMainComponent from './BossMainComponent.vue';
 import EventsMainComponent from './EventsMainComponent.vue';
 import CreativeMainComponent from './CreativeMainComponent.vue';
 import NewsMainComponent from './NewsMainComponent.vue';
 import TestimonialsMainComponent from './TestimonialsMainComponent.vue';
+import VideoMainComponent from './VideoMainComponent.vue';
 
 export default {
   components: {
-    SectionOneMain,
-    SectionTwoMain,
+    specialtiesMainComponent,
+    BossMainComponent,
     EventsMainComponent,
     CreativeMainComponent,
     NewsMainComponent,
-    TestimonialsMainComponent
+    TestimonialsMainComponent,
+    VideoMainComponent
   },
   data() {
     return {
@@ -25,9 +27,9 @@ export default {
 
 <template>
     <main>
-        <SectionOneMain />
+        <specialtiesMainComponent />
 
-        <SectionTwoMain />
+        <BossMainComponent />
 
         <EventsMainComponent />
 
@@ -36,6 +38,8 @@ export default {
         <NewsMainComponent />
 
         <TestimonialsMainComponent />
+
+        <VideoMainComponent />
     </main>
 </template>
 

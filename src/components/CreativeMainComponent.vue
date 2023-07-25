@@ -25,12 +25,20 @@ export default {
             ]
         }
     }
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 }
 </script>
 
 <template>
     <section>
+        <a href="#" class="up" @click.prevent="scrollToTop">
+            &#129057;
+        </a>
         <div class="container">
             <div class="text">
                 <h2>
@@ -70,10 +78,18 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/scss/partials/variables.scss" as *;
+@use "../assets/scss/partials/layout.scss";
 
 section {
     background-color: $primary-bg;
+    position: relative;
 
+    a {
+        position: absolute;
+        top: 40%;
+        right: 30px;
+        transform: translate(-0%, -50%);
+    }
     .container {
         max-width: 1300px;
         margin: auto;

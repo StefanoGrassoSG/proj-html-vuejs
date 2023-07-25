@@ -32,12 +32,20 @@ export default {
             }
         ]
     }
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 }
 </script>
 
 <template>
     <section>
+        <a href="#" class="up" @click.prevent="scrollToTop">
+            &#129057;
+        </a>
         <div class="container">
             <div class="events-container">
                 <div class="title">
@@ -82,12 +90,21 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/scss/partials/variables.scss" as *;
+@use "../assets/scss/partials/layout.scss";
 
 section {
     background-image: url('../assets/img/h1-img-09.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 200px 0;
+    position: relative;
+
+    a {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translate(-0%, -50%);
+    }
     .container {
         max-width: 1300px;
         margin: auto;

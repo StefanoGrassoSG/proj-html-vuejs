@@ -2,12 +2,14 @@
 import SectionOneMain from './SectionOneMain.vue';
 import SectionTwoMain from './SectionTwoMain.vue';
 import EventsMainComponent from './EventsMainComponent.vue';
+import CreativeMainComponent from './CreativeMainComponent.vue';
 
 export default {
   components: {
     SectionOneMain,
     SectionTwoMain,
-    EventsMainComponent
+    EventsMainComponent,
+    CreativeMainComponent
   },
   data() {
     return {
@@ -24,6 +26,8 @@ export default {
         <SectionTwoMain />
 
         <EventsMainComponent />
+
+        <CreativeMainComponent />
     </main>
 </template>
 

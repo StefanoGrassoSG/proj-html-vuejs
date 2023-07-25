@@ -4,6 +4,7 @@ import SectionTwoMain from './SectionTwoMain.vue';
 import EventsMainComponent from './EventsMainComponent.vue';
 import CreativeMainComponent from './CreativeMainComponent.vue';
 import NewsMainComponent from './NewsMainComponent.vue';
+import TestimonialsMainComponent from './TestimonialsMainComponent.vue';
 
 export default {
   components: {
@@ -11,7 +12,8 @@ export default {
     SectionTwoMain,
     EventsMainComponent,
     CreativeMainComponent,
-    NewsMainComponent
+    NewsMainComponent,
+    TestimonialsMainComponent
   },
   data() {
     return {
@@ -32,6 +34,8 @@ export default {
         <CreativeMainComponent />
 
         <NewsMainComponent />
+
+        <TestimonialsMainComponent />
     </main>
 </template>
 

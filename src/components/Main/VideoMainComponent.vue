@@ -16,10 +16,10 @@ export default {
 <template>
     <section>
         <div class="spin">
-            <img src="../assets/svg/svg-8.svg" alt="">
+            <img src="../../assets/svg/svg-8.svg" alt="">
         </div>
         <div class="cart">
-            <img src="../assets/svg/svg-7.svg" alt="">
+            <img src="../../assets/svg/svg-7.svg" alt="">
         </div>
         <a href="#" class="up" @click.prevent="scrollToTop">
             &#129057;
@@ -29,14 +29,14 @@ export default {
         </a>
         <i class="fa-solid fa-play fa-4x"></i>
         <div class="img">
-            <img src="../assets/img/h1-img-04.jpg" alt="">
+            <img src="../../assets/img/h1-img-04.jpg" alt="">
         </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
-@use "../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
 
 section {
     position: relative;

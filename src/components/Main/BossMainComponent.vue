@@ -32,7 +32,7 @@ export default {
       <a href="#" class="up" @click.prevent="scrollToTop">
           &#129057;
       </a>
-      <img class="bg" src="../assets/svg/svg-4.svg" alt="">
+      <img class="bg" src="../../assets/svg/svg-4.svg" alt="">
         <div class="container">
           <div class="slide">
             <div class="arrow-container">
@@ -43,7 +43,7 @@ export default {
                 &#8594;
               </span>
             </div>  
-            <img :src="getImagePath(`../assets/img/${slides[0]}`)" alt="">
+            <img :src="getImagePath(`../../assets/img/${slides[0]}`)" alt="">
           </div>
           <div class="founder">
             <h2>
@@ -69,7 +69,7 @@ export default {
                 </div>
               </div>
               <div class="firma">
-                <img src="../assets/img/firma.png" alt="">
+                <img src="../../assets/img/firma.png" alt="">
               </div>
             </div>
           </div>
@@ -78,8 +78,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
-@use "../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
 
 section {
   position: relative;

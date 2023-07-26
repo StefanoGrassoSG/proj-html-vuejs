@@ -35,8 +35,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/layout.scss";
-@use "../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
 
 .header-bottom {
     position: relative;

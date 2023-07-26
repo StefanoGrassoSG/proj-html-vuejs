@@ -63,7 +63,7 @@ export default {
             <div class="specialties">
                 <div class="card" v-for="(singleCard, i) in specialties.cards">
                     <div class="img">
-                        <img :src="getImagePath(`../assets/svg/${singleCard.img}`)" alt="">
+                        <img :src="getImagePath(`../../assets/svg/${singleCard.img}`)" alt="">
                     </div>
                     <h4>
                         {{ singleCard.title }}
@@ -78,15 +78,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
-@use "../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
 
 section {
     position: relative;
 
     a {
         position: absolute;
-        right: 30px;
+        right: 20px;
         bottom: 20px;
     }
     .container {

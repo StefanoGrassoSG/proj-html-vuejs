@@ -89,11 +89,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
-@use "../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
 
 section {
-    background-image: url('../assets/img/h1-img-09.jpg');
+    background-image: url('../../assets/img/h1-img-09.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 200px 0;
@@ -115,7 +115,7 @@ section {
             background-color: $third-bg;
 
             .event:hover {
-                background-color: $hover-bg;
+                background-color: $light-grey-bg;
             }
 
             .event {
@@ -179,7 +179,8 @@ section {
 
             .title {
                 font-size: 32px;              
-                padding: 20px 35px 35px
+                padding: 20px 35px 35px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             }
 
             .event {

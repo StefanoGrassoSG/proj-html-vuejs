@@ -1,11 +1,13 @@
 <script >
-import HeaderComponent from './components/HeaderComponent.vue';
-import MainComponent from './components/MainComponent.vue';
+import HeaderComponent from './components/Header/HeaderComponent.vue';
+import MainComponent from './components/Main/MainComponent.vue';
+import FooterComponent from './components/Footer/FooterComponent.vue';
 
 export default {
   components: {
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    FooterComponent
   },
   data() {
     return {
@@ -21,9 +23,7 @@ export default {
 
   <MainComponent />
 
-  <footer>
-    FOOTER
-  </footer>
+  <FooterComponent />
 </template>
 
 <style lang="scss">

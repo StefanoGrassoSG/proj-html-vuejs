@@ -80,7 +80,7 @@ export default {
             <template v-for="(singlePerson, i) in testimonials.people" :key="i">
                 <div class="slide" v-if="i == currentTestimonials">
                     <div class="photo">
-                        <img :src="getImagePath(`../assets/img/${singlePerson.photo}`)" alt="">
+                        <img :src="getImagePath(`../../assets/img/${singlePerson.photo}`)" alt="">
                     </div>
                     <h5>
                         {{ singlePerson.name }}
@@ -108,8 +108,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
-@use "../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
 
 section {
     background-color: $lightBlack-bg;

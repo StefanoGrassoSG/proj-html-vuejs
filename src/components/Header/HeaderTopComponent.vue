@@ -29,7 +29,7 @@ export default {
     <div class="header-top">
         <div class="container">
             <div class="logo">
-                <img :src="getImagePath(`../assets/img/${topData.logo}`)" :alt='topData.logoName'>
+                <img :src="getImagePath(`../../assets/img/${topData.logo}`)" :alt='topData.logoName'>
             </div>
 
             <div class="nav-bar">
@@ -46,8 +46,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/layout.scss";
-@use "../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
 
 .container {
     display: flex;

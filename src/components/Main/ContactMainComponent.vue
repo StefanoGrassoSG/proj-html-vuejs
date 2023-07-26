@@ -6,7 +6,14 @@ export default {
             dotImg: 'h1-contact-rev-02.png',
             img: 'h1-contact-rev-01.png',
             place: 'New York Coaching'
-        }
+        },
+        clients: [
+            'h4-clients-img-01.png',
+            'h4-clients-img-03.png',
+            'h4-clients-img-05.png',
+            'h4-clients-img-07.png',
+            'h4-clients-img-09.png'
+        ]
     }
   },
   methods:{
@@ -19,13 +26,16 @@ export default {
 
 <template>
     <section>
+        <a href="#" class="up" @click.prevent="scrollToTop">
+            &#129057;
+        </a>
         <div class="container">
             <div class="map">
                 <div class="map-img">
-                    <img class="dot" :src="getImagePath(`../assets/img/${mapdata.dotImg}`)" alt="">
-                    <img class="dot" :src="getImagePath(`../assets/img/${mapdata.dotImg}`)" alt="">
-                    <img class="dot" :src="getImagePath(`../assets/img/${mapdata.dotImg}`)" alt="">
-                    <img :src="getImagePath(`../assets/img/${mapdata.img}`)" alt="">
+                    <img class="dot" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
+                    <img class="dot" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
+                    <img class="dot" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
+                    <img :src="getImagePath(`../../assets/img/${mapdata.img}`)" alt="">
                 </div>
                 <div class="tag">
                     <h4>
@@ -70,17 +80,33 @@ export default {
                 </form>
             </div>
         </div>
+
+        <div class="sponsors">
+            <div v-for="(singleClient, i) in clients" :key="i">
+                <img :src="getImagePath(`../../assets/img/${singleClient}`)" alt="">
+            </div>  
+        </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss" as *;
 
+section {
+    position: relative;
+
+    .up {
+        position: absolute;
+        bottom: 20%;
+        right: 30px;
+    }
+}
 .container {
     display: flex;
     max-width: 1300px;
     margin: auto;
-    padding: 150px 0;
+    padding-top: 150px;
 
     .map {
         width: 50%;
@@ -239,6 +265,7 @@ export default {
             }
 
             .text-area {
+                width: calc(100% - 30px);
                 margin-top: 30px;
                 margin-bottom: 50px;
                 position: relative;
@@ -267,4 +294,16 @@ export default {
         }
     }
 }
+.sponsors {
+        max-width: 1300px;
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 70px;
+        padding-bottom: 70px;
+
+        div {
+            cursor: pointer;
+        }
+    }
 </style>

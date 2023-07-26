@@ -54,7 +54,7 @@ export default {
             &#8594;
         </div>
         <div class="title">
-            <img class="bg" src="../assets/svg/svg-4.svg" alt="">
+            <img class="bg" src="../../assets/svg/svg-4.svg" alt="">
             <h2>
                 {{ news.title }}<span>.</span>
             </h2>
@@ -71,7 +71,7 @@ export default {
                         <i class="fa-solid fa-tag fa-xs"></i>
                         {{ singleCard.tag }}
                     </div>
-                    <img :src="getImagePath(`../assets/img/${singleCard.img}`)" alt="">
+                    <img :src="getImagePath(`../../assets/img/${singleCard.img}`)" alt="">
                 </div>
                 <div class="info">
                     <i class="fa-regular fa-clock fa-xs"></i> {{ singleCard.date }}
@@ -92,8 +92,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables.scss" as *;
-@use "../assets/scss/partials/layout.scss";
+@use "../../assets/scss/partials/variables.scss" as *;
+@use "../../assets/scss/partials/layout.scss";
 
 section {
     position: relative;

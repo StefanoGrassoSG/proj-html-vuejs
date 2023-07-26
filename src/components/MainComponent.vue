@@ -6,6 +6,7 @@ import CreativeMainComponent from './CreativeMainComponent.vue';
 import NewsMainComponent from './NewsMainComponent.vue';
 import TestimonialsMainComponent from './TestimonialsMainComponent.vue';
 import VideoMainComponent from './VideoMainComponent.vue';
+import ContactMainComponent from './ContactMainComponent.vue';
 
 export default {
   components: {
@@ -15,7 +16,8 @@ export default {
     CreativeMainComponent,
     NewsMainComponent,
     TestimonialsMainComponent,
-    VideoMainComponent
+    VideoMainComponent,
+    ContactMainComponent
   },
   data() {
     return {
@@ -40,6 +42,8 @@ export default {
         <TestimonialsMainComponent />
 
         <VideoMainComponent />
+
+        <ContactMainComponent />
     </main>
 </template>
 

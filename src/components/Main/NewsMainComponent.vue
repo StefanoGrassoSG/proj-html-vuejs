@@ -207,6 +207,13 @@ section {
         .more {
             cursor: pointer;
             font-weight: bold;
+            transition: all 0.2s ease-in-out;
+            transform-origin: center;
+
+            &:hover {
+                color: $fill-color-one;
+                transform: scale(1.1);
+            }
         }
     }
 }

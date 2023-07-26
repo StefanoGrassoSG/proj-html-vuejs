@@ -2,10 +2,15 @@
 export default {
   data() {
     return {
+        active: 0,
         mapdata: {
             dotImg: 'h1-contact-rev-02.png',
             img: 'h1-contact-rev-01.png',
-            place: 'New York Coaching'
+            place: [
+            'New York Coaching',
+            'New stockholm',
+            'New York sidney'
+            ]
         },
         clients: [
             'h4-clients-img-01.png',
@@ -19,8 +24,18 @@ export default {
   methods:{
     getImagePath: function(imgpath) {
             return new URL(imgpath, import.meta.url).href;
-        }
-  }
+        },
+    changeNewYork() {
+        this.active = 0
+    },
+    changestockholm() {
+        this.active = 1
+        console.log(this.active)
+    },
+    changesidney() {
+        this.active = 2
+    }
+    }
 }
 </script>
 
@@ -32,18 +47,34 @@ export default {
         <div class="container">
             <div class="map">
                 <div class="map-img">
-                    <img class="dot" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
-                    <img class="dot" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
-                    <img class="dot" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
+                    <img class="dot" @click="changeNewYork()" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
+                    <img class="dot" @click="changestockholm()" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
+                    <img class="dot" @click="changesidney()" :src="getImagePath(`../../assets/img/${mapdata.dotImg}`)" alt="">
                     <img :src="getImagePath(`../../assets/img/${mapdata.img}`)" alt="">
                 </div>
-                <div class="tag">
+                <div class="tag new-york" v-if="active == 0">
                     <h4>
-                        {{ mapdata.place }}
+                        {{ mapdata.place[0] }}
                     </h4>
-                    <dv class="more">
+                    <div class="more">
                         READ MORE
-                    </dv>
+                    </div>
+                </div>
+                <div class="tag stockholm" v-if="active == 1">
+                    <h4>
+                        {{ mapdata.place[1] }}
+                    </h4>
+                    <div class="more">
+                        READ MORE
+                    </div>
+                </div>
+                <div class="tag sidney" v-if="active == 2">
+                    <h4>
+                        {{ mapdata.place[2] }}
+                    </h4>
+                    <div class="more">
+                        READ MORE
+                    </div>
                 </div>
             </div>  
             <div class="contact">
@@ -119,9 +150,21 @@ section {
             padding: 16px 24px;
             padding-right: 30px;
             padding-bottom: 24px;
-            top: 40%;
-            left: 22%;
-            cursor: pointer;
+
+            &.new-york {
+                top: 38%;
+                left: 20%;
+            }
+            &.stockholm {
+                top: 0;
+                left: 45%;
+                transform: translate(-0%, -20%);
+            }
+
+            &.sidney {
+                bottom: 40%;
+                right: 20%;
+            }
 
             h4 {
                 font-size: 21px;
@@ -129,6 +172,14 @@ section {
 
             .more {
                 font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                display: block;
+
+                &:hover {
+                    color: $fill-color-one;
+                    transform: scale(1.1);
+                }
             }
         }
 
@@ -136,6 +187,12 @@ section {
             width: 100%;
             .dot {
                 position: absolute;
+                transition: all 0.1s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
 
             .dot:nth-of-type(1) {
@@ -189,6 +246,7 @@ section {
                 display: flex;
             }
 
+           
 
             a {
             margin-right: 30px;
@@ -199,6 +257,16 @@ section {
             font-size: 14px;
             color: $third-text-color;
             background-color: $secondary-bg;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                background-color: $third-text-color;
+                color: $secondary-bg;
+            }
+
+            
 
             .arrow {
                 padding: 6px 14px;
@@ -206,8 +274,7 @@ section {
                 margin: 10px 0;
                 margin-left: 20px;
             }
-        }
-
+            }
 
             .input {
                 font-size: 20px;
@@ -304,6 +371,12 @@ section {
 
         div {
             cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        div:hover {
+            filter: invert(70%) sepia(94%) saturate(6846%) hue-rotate(353deg) brightness(104%) contrast(101%);
+            transform: scale(1.3);
         }
     }
 </style>

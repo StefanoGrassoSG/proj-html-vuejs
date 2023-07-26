@@ -4,10 +4,11 @@
 export default {
   data() {
     return {
+      currentSlide: 0,
       slides: [
         'h1-img-01.jpg',
         'h1-img-02.jpg',
-        'h1-img-02.jpg'
+        'h1-img-03.jpg'
       ],
       boss: {
         name: 'Jason Bickford',
@@ -22,6 +23,22 @@ export default {
         },
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    slideNext() {
+        if(this.currentSlide == this.slides.length - 1) {
+            this.currentSlide = 0
+        }
+        else {
+            this.currentSlide++
+        }
+    },
+    slidePrev() {
+        if(this.currentSlide == 0) {
+            this.currentSlide = this.slides.length -1
+        }
+        else {
+            this.currentSlide--
+        }
     }
   }
 }
@@ -33,18 +50,19 @@ export default {
           &#129057;
       </a>
       <img class="bg" src="../../assets/svg/svg-4.svg" alt="">
-        <div class="container">
-          <div class="slide">
-            <div class="arrow-container">
-              <span class="arrow-back">
-                &#8592;
-              </span>
-              <span class="arrow-next">
-                &#8594;
-              </span>
-            </div>  
-            <img :src="getImagePath(`../../assets/img/${slides[0]}`)" alt="">
+      <div class="container">
+        <div
+          class="slide"
+          v-for="(singleSlide, i) in slides"
+          :key="i"
+          v-show="i === currentSlide"
+        >
+          <div class="arrow-container">
+            <span class="arrow-back" @click="slidePrev()">&#8592;</span>
+            <span class="arrow-next" @click="slideNext()">&#8594;</span>
           </div>
+          <img :src="getImagePath(`../../assets/img/${slides[i]}`)" alt="">
+      </div>
           <div class="founder">
             <h2>
               {{ boss.name }}
@@ -120,10 +138,17 @@ section {
       left: 0;
       padding: 18px;
       background-color: $secondary-bg;
+      user-select: none;
 
       > span {
         cursor: pointer;
         color: $third-text-color;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+      }
+
+      > span:hover {
+        transform: scale(1.5);
       }
       .arrow-back {
         margin-right: 10px;
@@ -154,6 +179,11 @@ section {
         margin-right: 10px;
         color: $fill-color-one;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: black;
+        }
       }
     }
 

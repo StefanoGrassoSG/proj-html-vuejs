@@ -62,11 +62,19 @@ section {
         top: 45px;
         background-color: $primary-bg;
         padding: 10px;
+
+        &:hover {
+            background-color: rebeccapurple;
+        }
     }
 
     .spin {
         background-color: $purple-bg;
         padding: 7px;
+
+        &:hover {
+            background-color: rebeccapurple;
+        }
     }
 
     a {
@@ -87,6 +95,12 @@ section {
         transform: translate(-50%, -50%);
         color: $third-text-color;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            color: $fill-color-one;
+        }
     }
     .img > img {
         width: 100%;

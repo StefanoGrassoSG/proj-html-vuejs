@@ -127,6 +127,12 @@ section {
         .more {
             font-weight: bold;
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                color: $fill-color-one;
+                transform: scale(1.1);
+            }
         }
     }
 

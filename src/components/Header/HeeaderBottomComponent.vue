@@ -2,10 +2,19 @@
 export default {
     data() {
         return {
+            isChanged: false,
             slides: {
                 title: 'Our Team',
                 text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum similique accusantium minima nesciunt, minus laborum.'
             }
+        }
+    },
+    methods: {
+        changeStyle() {
+            this.isChanged = true;
+        },
+        returnDefault() {
+            this.isChanged =false
         }
     }
 }
@@ -27,8 +36,11 @@ export default {
                 <p>
                     {{ slides.text }}
                 </p>
-                <a href="#">READ MORE <span class="arrow">&#8594;</span></a>
-                <a href="#">PURCHASE <span class="arrow">&#8594;</span></a>
+                <a href="#"  :class="{
+                    changedTwo: isChanged
+                }" @mouseover="changeStyle()" @mouseleave="returnDefault()">READ MORE <span class="arrow">&#8594;</span></a>
+                <a href="#" @mouseover="changeStyle()" @mouseleave="returnDefault()"  :class="{
+                    changed: isChanged }" >PURCHASE <span class="arrow">&#8594;</span></a>
             </div>
         </div>
     </div>
@@ -92,6 +104,12 @@ export default {
             color: $primary-text-color;
             font-weight: bold;
             background-color: $primary-bg;
+            display: inline-block;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
 
             .arrow {
                 padding: 6px 14px;
@@ -99,6 +117,26 @@ export default {
                 margin: 10px 0;
                 margin-left: 20px;
             }
+        }
+
+        a:nth-of-type(1):hover {
+            background-color: $fill-color-one;
+            color: white;
+        }
+
+        a:nth-of-type(2):hover {
+            background-color: white;
+            color: black;
+        }
+
+        .changed {
+            background-color: white!important;
+            color: black!important;
+        }
+
+        .changedTwo {
+            background-color: $fill-color-one!important;
+            color: white!important;
         }
 
         a:nth-of-type(2) {

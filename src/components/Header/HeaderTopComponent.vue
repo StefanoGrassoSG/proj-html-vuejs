@@ -20,7 +20,10 @@ export default {
     methods: {
         getImagePath: function(imgpath) {
             return new URL(imgpath, import.meta.url).href;
-        }
+        },
+        changeIndex(i) {
+        this.currentActivePage = i
+    }
     }
 }
 </script>
@@ -34,7 +37,7 @@ export default {
 
             <div class="nav-bar">
                 <ul>
-                    <li v-for="(singleLink, i) in topData.nav" :key="i" :class="i == currentActivePage ? 'active-link' : ''">
+                    <li @mouseover="changeIndex(i)" v-for="(singleLink, i) in topData.nav" :key="i" :class="i == currentActivePage ? 'active-link' : ''">
                         {{ singleLink }}
                     </li>
                 </ul>
@@ -71,13 +74,15 @@ export default {
 
     .active-link {
         color: $fill-color-one;
-    }
 
-    .active-link::before {
+        &:before {
             content: "\2192";
             margin-right: 5px;
             font-size: 22px;
         }
+    }
+
+   
     .fa-magnifying-glass {
         margin-right: 30px;
     }

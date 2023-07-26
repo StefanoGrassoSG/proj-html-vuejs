@@ -113,9 +113,18 @@ section {
             width: 45%;
             height: 100%;
             background-color: $third-bg;
-
+            
             .event:hover {
                 background-color: $light-grey-bg;
+            }
+            
+            .event:hover .place span,
+            .event:hover .time span {
+                color: white;
+            }
+
+            .event:hover .info h5 {
+                color: $fill-color-one;
             }
 
             .event {
@@ -130,6 +139,7 @@ section {
                     h5 {
                         font-size: 25px;
                         line-height: 20px;
+                        transition: all 0.3s ease-in-out;
                     }
 
                     .more {
@@ -140,6 +150,10 @@ section {
                     .time,
                     .place {
                         color: $secondary-text-color;
+                        
+                        span {
+                            transition: all 0.3s ease-in-out;
+                        }
 
                         i {
                             color: $fill-color-one;

@@ -131,8 +131,23 @@ section {
 
             .card {
                 width: calc(100% / 4);
-                padding: 0 30px;
+                padding: 20px 30px;
                 text-align: center;
+                cursor: pointer;
+
+                .img {
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    border: 2px solid white;
+                    border-radius: 10px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                }
+
+                &:hover .img {
+                    transform: scale(1.2);
+                }
 
                 h4 {
                     margin: 15px 0;

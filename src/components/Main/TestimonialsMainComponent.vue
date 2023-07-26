@@ -78,7 +78,7 @@ export default {
                 &#8594;
             </div>
             <template v-for="(singlePerson, i) in testimonials.people" :key="i">
-                <div class="slide" v-if="i == currentTestimonials">
+                <div class="slide" v-show="i == currentTestimonials">
                     <div class="photo">
                         <img :src="getImagePath(`../../assets/img/${singlePerson.photo}`)" alt="">
                     </div>
@@ -135,15 +135,31 @@ section {
             top: 15%;
             cursor: pointer;
             user-select: none;
+            transition: all 0.2s ease-in-out;
+            padding: 10px;
+
+            &:hover {
+                transform: scale(1.4);
+                filter: brightness(120%);
+            }
         }
 
         .slide {
             width: 40%;
             margin: auto;
 
-            img {
+            .photo {
+                width: 100px;
+                height: 100px;
+                margin: auto;
+
+                img {
                 border: 5px solid white;
                 border-radius: 100px;
+                width: 100%;
+                height:100%;
+                object-fit: cover;
+            }
             }
 
             h5 {
@@ -190,10 +206,18 @@ section {
         
         .arrow-slide:nth-of-type(1) {
         left: 100px;
+        
+        &:hover {
+            left: 90px;
+        }
         }
 
         .arrow-slide:nth-of-type(2) {
         right: 100px;
+        
+        &:hover {
+            right: 90px;
+        }
         }
     }
 

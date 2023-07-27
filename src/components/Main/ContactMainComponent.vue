@@ -8,8 +8,8 @@ export default {
             img: 'h1-contact-rev-01.png',
             place: [
             'New York Coaching',
-            'stockholm Coaching',
-            'sidney Coaching'
+            'Stockholm Coaching',
+            'Sidney Coaching'
             ]
         },
         clients: [
